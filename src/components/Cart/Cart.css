@@ -1,6 +1,33 @@
-.cart{
-    background-color: rgba(255, 153, 0, 0.3);;
+.cart {
+    background-color: rgba(255, 153, 0, 0.3);
+    ;
     padding: 25px;
     position: sticky;
     top: 0;
+}
+
+.clear-btn {
+    width: 100%;
+    height: 56px;
+    font-size: 18px;
+    margin: 10px auto;
+    background: #FF3030;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-proceed {
+    width: 100%;
+    height: 56px;
+    background: #FF9900;
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 10px auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
