@@ -20,3 +20,6 @@ nav.header a:hover{
     color: rgb(236, 153, 64);
     margin-left: 10px;
 }
+.logOut-btn{
+    color: brown;
+}
