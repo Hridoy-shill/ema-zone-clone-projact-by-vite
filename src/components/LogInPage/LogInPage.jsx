@@ -1,10 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const LogInPage = () => {
     const [error, setError] = useState('')
     const {singIn} = useContext(AuthContext)
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogIn = (event) =>{
         setError('')
@@ -19,6 +24,7 @@ const LogInPage = () => {
             console.log(loggedUser);
             alert('login successful!!')
             form.reset()
+            navigate(from, {replace: true})
         })
         .catch(error =>{
             console.log(error);
