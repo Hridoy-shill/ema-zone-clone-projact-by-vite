@@ -20,12 +20,13 @@ const Header = () => {
                 <Link to="/">Shop</Link>
                 <Link to="/orders">Orders</Link>
                 <Link to="/inventory">Inventory</Link>
-                <Link to="/login">LogIn</Link>
                 <Link to="/singup">SingUp</Link>
-                {user &&
+                {user ?
                     <>
                         <button className='logOut-btn' onClick={handleLogOut}>logOut</button>
                     </>
+                    :
+                    <Link to="/login">LogIn</Link>
                 }
             </div>
         </nav>

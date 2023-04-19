@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const LogInPage = () => {
+
+    const [show, setShow] = useState(false)
     const [error, setError] = useState('')
     const {singIn} = useContext(AuthContext)
 
@@ -42,7 +44,12 @@ const LogInPage = () => {
                 </div>
                 <div className='input-field'>
                     <label htmlFor="password">Password</label>
-                    <input type="password" name='password' id='password' required/>
+                    <input type={show ? "text" : "password"} name='password' id='password' required/>
+                    <p onClick={() => setShow(!show)}><small>
+                        {
+                            show ? <span>Hide Password</span> : <span>Show Password</span>
+                        }
+                        </small></p>
                 </div>
                 <input className='submit' type="submit" name="submit" value='Log in' id="btn-submit" />
                 <small>New to Ema-john?<Link to={'/singup'} className='go-to-login'> Create New Account</Link></small>
